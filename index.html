@@ -528,8 +528,9 @@ a,button,[role=button],input,select{transition:color var(--ease),background var(
 <script>
 const g = id => document.getElementById(id);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const UPBIT = 'https://api.upbit.com/v1';
-const BNB = 'https://api.binance.com/api/v3';
+const CORS  = 'https://corsproxy.io/?url=';
+const UPBIT = CORS + 'https://api.upbit.com/v1';
+const BNB   = CORS + 'https://api.binance.com/api/v3';
 
 let results = [], curTab = 'all', curFilter = 'all', sortK = 'maxVolRatio', sortD = -1, scanning = false;
 let alerts = [], alertTimer = null;
