@@ -612,7 +612,7 @@ async function getUpbitCandles(ticker, tf, count = 110) {
 async function getBnbCandles(symbol, tf, count = 110) {
   const iv = tf === 'day' ? '1d' : tf === '240' ? '4h' : '1h';
   const d = await fetchJSON(`${BNB}/klines?symbol=${symbol}&interval=${iv}&limit=${count}`);
-  return d ? d.map(c => ({ t: c[0], o: +c[1], h: +c[2], l: +c[3], c: +c[4], v: +c[5] })).reverse() : null;
+  return d ? d.map(c => ({ t: c[0], o: +c[1], h: +c[2], l: +c[3], c: +c[4], v: +c[5] })) : null;
 }
 
 /* ── MA CALC ── */
